@@ -19,7 +19,8 @@ class InternalFilesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cache)
 
-        val fileContent = "Hi, How are you?\nThis is an android file demo"
+        val fileContent =
+            "Hi, How are you?\nThis is an android file demo \nfor internal private file"
 
         // button click listener to save the data to cache
         btn_save_internal.setOnClickListener {

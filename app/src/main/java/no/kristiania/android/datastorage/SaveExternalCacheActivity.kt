@@ -16,7 +16,8 @@ class SaveExternalCacheActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_save_external_cache)
-        val fileContent = "Hi, How are you?\nThis is an android file demo"
+        val fileContent =
+            "Hi, How are you?\nThis is an android file demo \nfor external private file"
 
 
         btn_save_external.setOnClickListener {
