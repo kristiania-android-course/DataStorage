@@ -3,15 +3,11 @@ package no.kristiania.android.datastorage
 import android.Manifest
 import android.content.pm.PackageManager
 import android.os.Bundle
-import android.os.Environment
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_public_external.*
-import java.io.File
-import java.io.FileInputStream
-import java.io.FileOutputStream
 
 class PublicExternalActivity : AppCompatActivity() {
 
@@ -26,15 +22,19 @@ class PublicExternalActivity : AppCompatActivity() {
 
         btn_save_public.setOnClickListener {
             // Get the public folder
-            val folder = Environment.getExternalStorageDirectory()
-            val file = File(folder, "my-public-file")
-            write(fileContent, file)
+
+            // create file
+
+            // Write in the file
+
         }
 
         btn_read_public.setOnClickListener {
-            val folder = Environment.getExternalStorageDirectory()
-            val file = File(folder, "my-public-file")
-            readFrom(file)
+            // Get the public folder
+
+            // create file
+
+            // read from the file
         }
 
     }
@@ -77,67 +77,7 @@ class PublicExternalActivity : AppCompatActivity() {
     }
 
 
-    private fun readFrom(file: File) {
-        val fIn = FileInputStream(file)
-        val string = fIn.bufferedReader()
-            .useLines { lines ->
-                lines.fold("") { appnd, line ->
-                    "$appnd\n$line"
-                }
-            }
-        Toast.makeText(this, string, Toast.LENGTH_LONG).show()
-    }
-
     // Lets have a function to read and write to files
-    private fun write(fileContents: String, file: File) {
 
-        val fOut = FileOutputStream(file, true)
-        fOut.write(fileContents.toByteArray())
-        fOut.close()
-    }
-
-
-    /*private fun handleExternalDirectory(context: Context, filename : String) {
-
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
-            != PackageManager.PERMISSION_GRANTED) {
-            // Permission is not granted do that
-            ActivityCompat.requestPermissions(this,
-                arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE) ,
-                123)
-        }else{
-            val file = File(Environment.getExternalStorageDirectory(), "image-media.jpeg")
-            writeReadDelete( file)
-        }
-
-    }
-
-    override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<out String>,
-        grantResults: IntArray
-    ) {
-        when (requestCode) {
-            123 -> {
-                if (grantResults.isEmpty()
-                    && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    val file = File(Environment.getExternalStorageDirectory(), "image-media.jpeg")
-                    writeReadDelete( file)
-                }
-            }
-
-        }
-    }
-
-
-    private fun writeReadDelete(file: File) {
-
-        val bitmap = ContextCompat.getDrawable(this, R.drawable.android)?.toBitmap(2001, 1789)
-
-        FileOutputStream(file, true).use { fileOutStream ->
-            bitmap?.compress(Bitmap.CompressFormat.JPEG, 85, fileOutStream)
-            fileOutStream.close()
-        }
-    }*/
 
 }
