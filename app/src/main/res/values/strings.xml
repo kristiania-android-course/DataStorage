@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">DataStorage</string>
+    <string name="save_to_internal">Save to Internal</string>
+    <string name="read_from_internal">Read fromInternal</string>
+    <string name="delete_internal">DeleteFromInternal</string>
+</resources>
