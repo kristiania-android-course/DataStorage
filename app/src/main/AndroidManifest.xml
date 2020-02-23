@@ -16,15 +16,17 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".SharedPreferenceActivity">
+
+        </activity>
+        <activity android:name=".PublicExternalActivity"></activity>
+        <activity android:name=".SaveExternalCacheActivity"></activity>
+        <activity android:name=".InternalFilesActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PublicExternalActivity" />
-        <activity android:name=".SaveExternalCacheActivity" />
-        <activity android:name=".InternalFilesActivity" />
     </application>
 
 </manifest>
