@@ -97,47 +97,4 @@ class PublicExternalActivity : AppCompatActivity() {
     }
 
 
-    /*private fun handleExternalDirectory(context: Context, filename : String) {
-
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
-            != PackageManager.PERMISSION_GRANTED) {
-            // Permission is not granted do that
-            ActivityCompat.requestPermissions(this,
-                arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE) ,
-                123)
-        }else{
-            val file = File(Environment.getExternalStorageDirectory(), "image-media.jpeg")
-            writeReadDelete( file)
-        }
-
-    }
-
-    override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<out String>,
-        grantResults: IntArray
-    ) {
-        when (requestCode) {
-            123 -> {
-                if (grantResults.isEmpty()
-                    && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    val file = File(Environment.getExternalStorageDirectory(), "image-media.jpeg")
-                    writeReadDelete( file)
-                }
-            }
-
-        }
-    }
-
-
-    private fun writeReadDelete(file: File) {
-
-        val bitmap = ContextCompat.getDrawable(this, R.drawable.android)?.toBitmap(2001, 1789)
-
-        FileOutputStream(file, true).use { fileOutStream ->
-            bitmap?.compress(Bitmap.CompressFormat.JPEG, 85, fileOutStream)
-            fileOutStream.close()
-        }
-    }*/
-
 }
