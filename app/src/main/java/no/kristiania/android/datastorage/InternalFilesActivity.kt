@@ -12,7 +12,6 @@ class InternalFilesActivity : AppCompatActivity() {
 
     val internalFileName = "my-internal-file"
 
-
     // First lets make a function to manipulate files
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -63,10 +62,7 @@ class InternalFilesActivity : AppCompatActivity() {
             } catch (e: FileNotFoundException) {
                 e.printStackTrace()
             }
-
         }
 
     }
-
-
 }
