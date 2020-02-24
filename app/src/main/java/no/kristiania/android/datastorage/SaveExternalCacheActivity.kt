@@ -17,6 +17,7 @@ class SaveExternalCacheActivity : AppCompatActivity() {
         btn_save_external.setOnClickListener {
             // getExternalFilesDir
 
+
             // Lets have a function to write to files
         }
 
