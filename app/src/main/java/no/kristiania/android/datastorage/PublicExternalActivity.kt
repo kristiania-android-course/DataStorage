@@ -3,15 +3,11 @@ package no.kristiania.android.datastorage
 import android.Manifest
 import android.content.pm.PackageManager
 import android.os.Bundle
-import android.os.Environment
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_public_external.*
-import java.io.File
-import java.io.FileInputStream
-import java.io.FileOutputStream
 
 class PublicExternalActivity : AppCompatActivity() {
 
@@ -26,15 +22,19 @@ class PublicExternalActivity : AppCompatActivity() {
 
         btn_save_public.setOnClickListener {
             // Get the public folder
-            val folder = Environment.getExternalStorageDirectory()
-            val file = File(folder, "my-public-file")
-            write(fileContent, file)
+
+            // create file
+
+            // Write in the file
+
         }
 
         btn_read_public.setOnClickListener {
-            val folder = Environment.getExternalStorageDirectory()
-            val file = File(folder, "my-public-file")
-            readFrom(file)
+            // Get the public folder
+
+            // create file
+
+            // read from the file
         }
 
     }
@@ -77,24 +77,7 @@ class PublicExternalActivity : AppCompatActivity() {
     }
 
 
-    private fun readFrom(file: File) {
-        val fIn = FileInputStream(file)
-        val string = fIn.bufferedReader()
-            .useLines { lines ->
-                lines.fold("") { appnd, line ->
-                    "$appnd\n$line"
-                }
-            }
-        Toast.makeText(this, string, Toast.LENGTH_LONG).show()
-    }
-
     // Lets have a function to read and write to files
-    private fun write(fileContents: String, file: File) {
-
-        val fOut = FileOutputStream(file, true)
-        fOut.write(fileContents.toByteArray())
-        fOut.close()
-    }
 
 
 }

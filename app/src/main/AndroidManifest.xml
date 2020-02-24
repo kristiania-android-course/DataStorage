@@ -3,9 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="no.kristiania.android.datastorage">
 
-    <uses-permission
+    <!--<uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
-        android:maxSdkVersion="28" />
+        android:maxSdkVersion="28" />-->
 
     <application
         android:allowBackup="true"
@@ -16,15 +16,17 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".SharedPreferenceActivity">
+
+        </activity>
+        <activity android:name=".PublicExternalActivity"></activity>
+        <activity android:name=".SaveExternalCacheActivity"></activity>
+        <activity android:name=".InternalFilesActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PublicExternalActivity" />
-        <activity android:name=".SaveExternalCacheActivity" />
-        <activity android:name=".InternalFilesActivity" />
     </application>
 
 </manifest>
